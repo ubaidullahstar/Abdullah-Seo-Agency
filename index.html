@@ -300,6 +300,16 @@ details[open] p{animation:enter .6s var(--ease) both}
   .marquee-track{gap:32px}
   .reveal{filter:none;transform:translateY(20px)}
 }
+
+/* feature card: stack on tablet + mobile (needs the same specificity as the base rule) */
+@media (max-width:960px){
+  .svc-grid .svc.feature{grid-template-columns:1fr;gap:24px}
+}
+@media (max-width:720px){
+  .svc-grid .svc.feature{grid-template-columns:1fr;gap:20px;padding:24px 22px}
+  .svc.feature .btn{width:100%;justify-content:center}
+  .svc.feature li{gap:10px}
+}
 </style>
 </head>
 <body>
