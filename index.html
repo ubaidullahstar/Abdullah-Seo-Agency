@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEO Business Growth | Get Found. Get Growing.</title>
+<meta name="description" content="Local SEO, Google Maps, web design, negative review removal and digital marketing. Book a free consultation with Muhammad Abdullah.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff; --mist:#f4f7fb; --line:#dfe6ef;
+  --ink:#0e1b2c; --muted:#4e5d73;
+  --blue:#c8961a; --blue-dark:#a87b10; --blue-soft:#fbf3dc; --goldtext:#7a5600;
+  --green:#12805c; --green-soft:#e3f5ee; --amber:#f5a524;
+  --ease:cubic-bezier(.22,1,.36,1); --r-lg:20px; --r-md:12px; --r-sm:8px;
+  --head:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Source Sans 3",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--goldtext);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);line-height:1.12;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,5.2vw,4rem);font-weight:800}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:700}
+h3{font-size:1.25rem;font-weight:700}
+p.lead{font-size:1.15rem;color:var(--muted);max-width:56ch}
+section{padding:88px 0}
+.alt{background:var(--mist)}
+.sec-head{max-width:640px;margin-bottom:44px}
+.sec-head p{color:var(--muted);margin-top:12px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 1rem var(--body);padding:14px 24px;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-primary{background:var(--blue);color:var(--ink)}
+.btn-primary:hover{background:var(--blue-dark);color:#fff}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:100px;transition:height .5s cubic-bezier(.22,1,.36,1)}
+header.scrolled .nav{height:80px}
+.brand{display:flex;align-items:center;gap:10px;font:800 1.25rem var(--head)}
+.brand{gap:16px}
+.brand img{height:80px;width:auto;transition:height .5s cubic-bezier(.22,1,.36,1)}
+header.scrolled .brand img{height:62px}
+footer .brand img{height:72px}
+.brand .owner{font:800 1.45rem/1.1 var(--head);letter-spacing:-.02em;padding-left:16px;border-left:4px solid var(--blue);color:var(--ink)}
+.menu{display:flex;align-items:center;gap:28px;font-weight:500}
+.menu a:not(.btn):hover{color:var(--goldtext)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0}
+
+/* hero */
+.hero{padding:72px 0 88px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{margin-bottom:20px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero .note{margin-top:18px;font-size:.95rem;color:var(--muted)}
+
+/* the memorable moment: search result mock */
+.serp{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:0 24px 60px -24px rgba(16,34,58,.28);padding:22px}
+.serp-bar{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:10px 16px;color:var(--muted);font-size:.95rem;margin-bottom:18px}
+.serp-bar svg{flex:none}
+.res{display:flex;gap:14px;align-items:flex-start;padding:14px;border-radius:var(--r-md)}
+.res + .res{margin-top:6px}
+.res.you{background:var(--blue-soft);border:1px solid #ecd48f}
+.rank{flex:none;width:34px;height:34px;border-radius:50%;background:var(--mist);display:grid;place-items:center;font:700 .95rem var(--head);color:var(--muted)}
+.you .rank{background:var(--blue);color:var(--ink)}
+.res b{display:block;font-weight:600}
+.res small{color:var(--muted);font-size:.88rem}
+.stars{color:var(--amber);letter-spacing:2px;font-size:.95rem}
+.up{margin-left:auto;flex:none;font-size:.8rem;font-weight:600;color:var(--green);background:var(--green-soft);padding:3px 10px;border-radius:999px;align-self:center}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--paper)}
+.stat{padding:28px 24px;text-align:left}
+.stat + .stat{border-left:1px solid var(--line)}
+.stat strong{display:block;font:800 2.4rem var(--head);color:var(--goldtext);letter-spacing:-.03em}
+.stat span{color:var(--muted);font-size:.98rem}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.svc-grid .svc{grid-column:span 2}
+.svc-grid .svc:nth-child(n+5){grid-column:span 3}
+.svc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px}
+.svc .ic{width:46px;height:46px;border-radius:12px;background:var(--blue-soft);color:var(--goldtext);display:grid;place-items:center;margin-bottom:18px}
+.svc p{color:var(--muted);margin-top:8px}
+.svc-grid .svc.feature{grid-column:1/-1;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;background:var(--ink);color:#fff;border:0;padding:40px}
+.svc.feature .ic{background:rgba(255,255,255,.12);color:#fff}
+.svc.feature p{color:#c5d0e0}
+.svc.feature ul{list-style:none;display:grid;gap:12px}
+.svc.feature li{display:flex;gap:10px;align-items:flex-start;color:#e6edf7}
+.svc.feature li svg{flex:none;margin-top:4px;color:#5fd3a6}
+.svc.feature .btn{margin-top:22px;background:#fff;color:var(--ink)}
+.svc.feature .btn:hover{background:var(--blue-soft)}
+
+/* clients */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.quote{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column;gap:16px}
+.quote p{font-size:1.05rem}
+.quote footer{border:0;padding:0;margin-top:auto;display:flex;flex-direction:column;font-size:.95rem;color:var(--muted)}
+.quote footer b{color:var(--ink)}
+@media (max-width:960px){.quotes{grid-template-columns:1fr}}
+
+/* approach + results */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chips span{font-size:.85rem;font-weight:600;background:var(--blue-soft);color:var(--goldtext);padding:5px 12px;border-radius:999px}
+.results{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.results ul{list-style:none;display:grid;gap:12px;margin-top:22px}
+.results li{display:flex;gap:10px}
+.results li svg{flex:none;margin-top:5px;color:var(--green)}
+.mini-stats{display:grid;gap:16px}
+.mini-stats div{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 26px}
+.mini-stats strong{display:block;font:800 2.2rem var(--head);color:var(--goldtext)}
+.mini-stats span{color:var(--muted)}
+@media (max-width:960px){.trio,.results{grid-template-columns:1fr}}
+
+/* about + cta */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-points{display:grid;gap:14px}
+.about-points div{border-left:4px solid var(--blue);padding:4px 0 4px 18px}
+.about-points p{color:var(--muted)}
+.cta-band{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:56px 40px;text-align:center}
+.cta-band p{color:#c5d0e0;max-width:52ch;margin:14px auto 28px}
+@media (max-width:960px){.about{grid-template-columns:1fr}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.step{position:relative;padding-top:22px;border-top:3px solid var(--blue)}
+.step::before{counter-increment:s;content:counter(s);display:block;font:800 1.1rem var(--head);color:var(--goldtext);margin-bottom:10px}
+.step p{color:var(--muted);margin-top:8px}
+
+/* why */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.why ul{list-style:none;display:grid;gap:22px}
+.why li{display:flex;gap:14px}
+.why li svg{flex:none;color:var(--green);margin-top:3px}
+.why li p{color:var(--muted)}
+
+/* faq */
+.faq{max-width:780px}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font:700 1.1rem var(--head);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--goldtext)}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:10px}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact-info{display:grid;gap:14px;margin-top:28px}
+.contact-info a{display:flex;gap:12px;align-items:center;font-weight:500}
+.contact-info a:hover{color:var(--goldtext)}
+form{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;display:grid;gap:16px}
+label{font-weight:600;font-size:.95rem;display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--paper);color:var(--ink);width:100%}
+textarea{min-height:110px;resize:vertical}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:.95rem}
+.foot{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+.foot .brand{color:var(--ink)}
+
+@media (max-width:960px){
+  .hero-grid,.why,.contact,.svc.feature{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .svc-grid .svc,.svc-grid .svc:nth-child(n+5){grid-column:span 1}
+  .svc-grid .svc.feature{grid-column:1/-1}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .brand .owner{display:none}
+  .nav,header.scrolled .nav{height:76px}
+  .brand img,header.scrolled .brand img{height:56px}
+  .menu{top:76px}
+  .stats{grid-template-columns:1fr}
+  .stat + .stat{border-left:0;border-top:1px solid var(--line)}
+  section{padding:64px 0}
+  .burger{display:block}
+  .menu{display:none;position:absolute;top:80px;left:0;right:0;background:var(--paper);flex-direction:column;align-items:flex-start;padding:20px 24px 28px;border-bottom:1px solid var(--line);gap:18px}
+  .menu.open{display:flex}
+  .svc-grid,.steps{grid-template-columns:1fr}
+  .svc-grid .svc.feature{padding:28px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* ================= ANIMATIONS ================= */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--blue);z-index:100}
+header{transition:box-shadow .5s var(--ease)}
+header.scrolled{box-shadow:0 8px 30px -14px rgba(16,34,58,.25)}
+
+/* hero entrance */
+.hero .enter{opacity:0;transform:translateY(24px);animation:enter 1.1s var(--ease) forwards;animation-delay:calc(var(--i,0)*140ms + 100ms)}
+@keyframes enter{to{opacity:1;transform:none}}
+.serp{animation:float 8s ease-in-out 2.2s infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+.res.you{animation:climb 1.9s var(--ease) .6s both}
+@keyframes climb{from{transform:translateY(118px);box-shadow:0 0 0 rgba(0,0,0,0)}60%{transform:translateY(-6px)}to{transform:none;box-shadow:0 10px 30px -14px rgba(200,150,26,.7)}}
+.res:not(.you){animation:nudge 1.9s var(--ease) .6s both}
+@keyframes nudge{from{opacity:.4;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.up{animation:pop .5s ease 1.7s both}
+@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(32px);filter:blur(4px);transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease);transition-delay:var(--d,0ms);will-change:opacity,transform}
+.reveal.in{opacity:1;transform:none;filter:none}
+
+/* hover motion */
+.svc,.quote,.mini-stats div,.stat{transition:opacity 1s var(--ease),filter 1s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease),border-color .4s,background .4s}
+.svc:not(.feature):hover,.quote:hover,.mini-stats div:hover{transform:translateY(-6px);box-shadow:0 20px 40px -20px rgba(16,34,58,.3);border-color:#ecd48f}
+.svc .ic{transition:transform .6s var(--ease),background .4s,color .4s}
+.svc:hover .ic{transform:rotate(-8deg) scale(1.1);background:var(--blue);color:var(--ink)}
+.btn{transition:background .3s,color .3s,transform .4s var(--ease),box-shadow .4s var(--ease)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(16,34,58,.45)}
+.step{border-top-color:var(--line);transition:border-color .6s}
+.step::after{content:"";position:absolute;top:-3px;left:0;height:3px;width:0;background:var(--blue);transition:width 1.4s var(--ease) .2s}
+.step.in::after{width:100%}
+.chips span{transition:background .2s,color .2s,transform .2s}
+.chips span:hover{background:var(--blue);color:var(--ink);transform:translateY(-2px)}
+details{transition:background .2s}
+details[open] p{animation:enter .6s var(--ease) both}
+
+/* keyword marquee */
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding:18px 0;background:var(--paper)}
+.marquee-track{display:flex;gap:48px;width:max-content;animation:scroll 48s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{font:700 1.15rem var(--head);color:var(--muted);white-space:nowrap;display:flex;align-items:center;gap:48px}
+.marquee span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* CTA glow */
+.cta-band{position:relative;overflow:hidden;isolation:isolate}
+.cta-band::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(200,150,26,.45),transparent 65%);top:-160px;left:-120px;z-index:-1;animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(120%,60%)}}
+
+/* floating whatsapp */
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.4)}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:ping 2s ease-out infinite}
+@keyframes ping{to{transform:scale(1.7);opacity:0}}
+
+@media (prefers-reduced-motion:reduce){
+  .hero .enter,.reveal,.serp,.res,.up,.marquee-track,.cta-band::before,.wa-float::before{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
+  .step::after{width:100%;transition:none}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Home"><img data-logo alt="SEO Business Growth" src="assets/logo.png"><span class="owner" data-bind="owner">Muhammad Abdullah</span></a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" id="burger"><span></span><span></span><span></span></button>
+    <nav class="menu" id="menu" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#why">Why us</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn-primary">Free consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 class="enter" style="--i:0">Get found. Get growing.</h1>
+      <p class="lead enter" style="--i:1">Powerful SEO, smarter digital strategies and real business growth. We help the right people find your business, and turn that attention into customers.</p>
+      <div class="actions enter" style="--i:2">
+        <a class="btn btn-primary" href="#contact">Get a free consultation</a>
+        <a class="btn btn-ghost" data-wa href="#">Chat on WhatsApp</a>
+      </div>
+      <p class="note enter" style="--i:3">No pressure. No commitments. Just possibilities.</p>
+    </div>
+
+    <div class="serp" role="img" aria-label="Example of a business moving up to position one in Google search results">
+      <div class="serp-bar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        best dentist near me
+      </div>
+      <div class="res you">
+        <div class="rank">1</div>
+        <div><b>Your Business</b><span class="stars">★★★★★</span> <small>4.9 · Open now</small></div>
+        <span class="up">▲ from #7</span>
+      </div>
+      <div class="res"><div class="rank">2</div><div><b>Competitor A</b><span class="stars">★★★★</span> <small>4.2</small></div></div>
+      <div class="res"><div class="rank">3</div><div><b>Competitor B</b><span class="stars">★★★★</span> <small>4.1</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 0 88px">
+  <div class="wrap">
+    <!-- Numbers come from the CONFIG block at the bottom of this file -->
+    <div class="stats">
+      <div class="stat"><strong data-bind="statClients">150+</strong><span>Happy clients</span></div>
+      <div class="stat"><strong data-bind="statRank">94%</strong><span>Rank improvement</span></div>
+      <div class="stat"><strong data-bind="statRating">4.9★</strong><span>Average rating</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Local SEO</span><span>Google Maps</span><span>Negative review removal</span><span>Citations</span><span>Web design</span><span>Digital marketing</span><span>Organic growth</span><span>Lead generation</span><span>Local SEO</span><span>Google Maps</span><span>Negative review removal</span><span>Citations</span><span>Web design</span><span>Digital marketing</span><span>Organic growth</span><span>Lead generation</span></div></div>
+
+<section id="approach" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Research, optimize, convert</h2>
+      <p>A transparent, data-led approach that connects your business with the right customers.</p>
+    </div>
+    <div class="trio">
+      <article class="svc"><h3>Research</h3><p>We study your goals, audience and competitors, so your SEO is built on a solid foundation.</p><div class="chips"><span>Goal analysis</span><span>Audience research</span><span>Keyword mapping</span></div></article>
+      <article class="svc"><h3>Optimize</h3><p>Hands-on work on your website, content and Google profile, shaped around your market.</p><div class="chips"><span>On-page SEO</span><span>Technical SEO</span><span>Content</span></div></article>
+      <article class="svc"><h3>Convert</h3><p>We turn visibility into calls, messages and enquiries, then track what is working.</p><div class="chips"><span>Lead tracking</span><span>Local visibility</span><span>Growth plan</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="system">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Our SEO system, step by step</h2>
+      <p>Everything works together to bring ready-to-buy customers to your business.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>SEO strategy</h3><p>Targeted keywords and location-focused campaigns for high-intent searches.</p></div>
+      <div class="step"><h3>Content &amp; optimization</h3><p>On-page and technical fixes, plus content written to rank and to convert.</p></div>
+      <div class="step"><h3>Leads &amp; conversion</h3><p>We track enquiries and refine the pages and profiles that bring them in.</p></div>
+      <div class="step"><h3>Steady growth</h3><p>Ongoing reports and insights, so you can act on what the data shows.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2>Meet your growth partner</h2>
+      <p class="lead" style="margin-top:14px"><span data-bind="name">SEO Business Growth</span> is run by Muhammad Abdullah. You work directly with the person doing the work, so there are no layers, no hand-offs and no confusing jargon.</p>
+      <p class="lead" style="margin-top:14px">Every plan starts with your goals, your customers and your market, and every decision is backed by data you can see.</p>
+    </div>
+    <div class="about-points">
+      <div><h3>Data-driven strategies</h3><p>Campaigns built on keyword research and real performance data.</p></div>
+      <div><h3>Geo-targeted SEO</h3><p>We optimize for your service areas and the people nearby who are ready to buy.</p></div>
+      <div><h3>Transparent reporting</h3><p>Clear, measurable updates at every step, so you always know where you stand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Everything your business needs to look good online</h2>
+      <p>Pick one service or combine them. We will recommend what actually fits your goals and budget.</p>
+    </div>
+    <div class="svc-grid">
+
+      <article class="svc feature">
+        <div>
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3 style="font-size:1.8rem">Negative review removal</h3>
+          <p>One unfair review can push a customer to your competitor. We review each negative review, check it against the platform's policies, and file removal requests for the ones that break the rules, such as fake, spam, off-topic or abusive reviews.</p>
+          <a class="btn" href="#contact">Check my reviews</a>
+        </div>
+        <ul>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Free review audit to find which reviews qualify for removal</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Removal requests filed through official platform channels</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Help replying professionally to genuine complaints</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Works on Google, Facebook, Trustpilot and more</li>
+        </ul>
+      </article>
+
+      <article class="svc">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>Local SEO &amp; Google Maps</h3>
+        <p>Put your business on the map. Reach nearby customers at the exact moment they are searching for what you offer.</p>
+      </article>
+      <article class="svc">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Web Design &amp; Development</h3>
+        <p>Fast, beautiful, mobile-friendly websites built to turn visitors into enquiries, and enquiries into customers.</p>
+      </article>
+      <article class="svc">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+        <h3>Citations &amp; Business Listings</h3>
+        <p>Accurate business information across the directories that matter, for a stronger and more consistent local presence.</p>
+      </article>
+      <article class="svc">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3>Digital Marketing &amp; Leads</h3>
+        <p>Connect with your ideal audience through focused campaigns designed around meaningful business growth.</p>
+      </article>
+      <article class="svc">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M8 13l2-2 2 1 2-3"/></svg></div>
+        <h3>SEO &amp; Organic Growth</h3>
+        <p>Build lasting visibility with a search strategy that brings qualified traffic to your website, month after month.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="clients" hidden>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What our clients say</h2>
+      <p>Real feedback from businesses we have worked with.</p>
+    </div>
+    <div class="quotes" id="quotes"></div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>How we work</h2>
+      <p>No guesswork. No complicated jargon. Just a strategy that moves your business forward.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Discover your business</h3><p>We get to know your business, your audience and what success looks like for you.</p></div>
+      <div class="step"><h3>Build your strategy</h3><p>A clear, focused roadmap built around your goals, not a one-size-fits-all package.</p></div>
+      <div class="step"><h3>Execute &amp; optimize</h3><p>We bring your strategy to life and refine the details that make the difference.</p></div>
+      <div class="step"><h3>Measure, scale &amp; grow</h3><p>Track what matters, see your progress, and build on the opportunities that work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap results">
+    <div>
+      <h2>Real results, real impact</h2>
+      <p class="lead" style="margin-top:14px">With a data-driven strategy, businesses can improve how they show up online and how many customers contact them.</p>
+      <ul>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>More organic traffic and visibility on search engines</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Higher rankings for the keywords that matter</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>More qualified leads and better conversion</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>A growth plan that adapts as your business grows</li>
+      </ul>
+    </div>
+    <div class="mini-stats">
+      <div><strong data-bind="statTraffic">200%</strong><span>Traffic growth</span></div>
+      <div><strong data-bind="statROI">5x</strong><span>ROI multiplier</span></div>
+      <div><strong data-bind="statSatisfaction">99%</strong><span>Client satisfaction</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="alt">
+  <div class="wrap why">
+    <div>
+      <h2>Not just more traffic. The right traffic.</h2>
+      <p class="lead" style="margin-top:14px">Behind every search is a real person looking for a solution. We help your business be the answer, with the care, clarity and focus you deserve.</p>
+    </div>
+    <ul>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><div><h3>High-intent audiences</h3><p>Reach people who are actively looking for your products and services.</p></div></li>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><div><h3>Geo-precision targeting</h3><p>Show up in the neighbourhoods and markets that matter to your business.</p></div></li>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><div><h3>Stay in the loop</h3><p>Clear updates and direct communication. You never have to wonder what is happening.</p></div></li>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><div><h3>Transparent reporting</h3><p>Know where you stand with straightforward, meaningful performance insights.</p></div></li>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><div><h3>Mobile-friendly websites</h3><p>Fast pages that look good on every screen and are built with SEO in mind.</p></div></li>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><div><h3>Flexible terms</h3><p>No lock-in. You stay because it is working, not because of a contract.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head"><h2>Common questions</h2></div>
+    <div class="faq">
+      <details><summary>Can every negative review be removed?</summary><p>No. Platforms only remove reviews that violate their policies, such as fake, spam, conflict of interest or abusive content. We audit your reviews first and tell you honestly which ones have a real chance.</p></details>
+      <details><summary>How long does SEO take to show results?</summary><p>Local SEO often shows movement within 2 to 3 months. Competitive keywords can take longer. We share progress every month so you can see the trend.</p></details>
+      <details><summary>Do you offer long-term contracts?</summary><p>No lock-in. Work with us month to month and stay only while you are getting value.</p></details>
+      <details><summary>Which cities and countries do you work with?</summary><p>We work with businesses in any location. Contact us with your service area and we will advise on the best approach.</p></details>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 0 88px">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Your business deserves to be discovered</h2>
+      <p>Start with a conversation. Tell us your goals and we will tell you honestly what can be done.</p>
+      <a class="btn btn-primary" data-wa href="#">Get your free consultation</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap contact">
+    <div>
+      <h2>Start with a free consultation</h2>
+      <p class="lead" style="margin-top:14px">Tell us about your business and goals. We will reply with honest advice and next steps.</p>
+      <div class="contact-info">
+        <a data-phone href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><span data-bind="phone"></span></a>
+        <a data-mail href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span data-bind="email"></span></a>
+        <a data-wa href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12Z"/></svg>Message on WhatsApp</a>
+      </div>
+    </div>
+    <form id="form">
+      <label>Your name<input name="name" required autocomplete="name"></label>
+      <label>Business or website<input name="biz" required></label>
+      <label>What do you need?
+        <select name="service">
+          <option>Local SEO &amp; Google Maps</option>
+          <option>Negative review removal</option>
+          <option>Web Design &amp; Development</option>
+          <option>Citations &amp; Business Listings</option>
+          <option>Digital Marketing &amp; Leads</option>
+          <option>SEO &amp; Organic Growth</option>
+        </select>
+      </label>
+      <label>Message<textarea name="msg" placeholder="Tell us briefly about your goals"></textarea></label>
+      <button class="btn btn-primary" type="submit">Send on WhatsApp</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#top" class="brand"><img data-logo alt="SEO Business Growth" src="assets/logo.png"><span class="owner" data-bind="owner">Muhammad Abdullah</span></a>
+    <span>Muhammad Abdullah, SEO &amp; Digital Marketing<br>© <span id="yr"></span> <span data-bind="name">SEO Business Growth</span>. All rights reserved.</span>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa href="#" aria-label="Chat on WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12Z"/></svg></a>
+<script>
+/* =====================  CONFIG: EDIT ONLY THIS BLOCK  =====================
+   Replace every value with your real details before going live.
+   Only publish statistics that are true and that you can back up. */
+const CONFIG = {
+  name:  "SEO Business Growth",
+  owner: "Muhammad Abdullah",         // shown next to the logo (logo already has the business name)
+  logo:  "assets/logo.png",          // just replace the file assets/logo.png with your logo (same name)
+  phone: "+92 305 6504449",           // shown on the site
+  whatsapp: "923056504449",           // country code + number, no + or spaces
+  email: "abdullahadnan9797@gmail.com",
+
+  // Only keep numbers that are true for this business.
+  statClients: "150+",
+  statRank: "94%",
+  statRating: "4.9★",
+  statTraffic: "200%",
+  statROI: "5x",
+  statSatisfaction: "99%",
+
+  // Add real client feedback here. Leave the list empty and the section stays hidden.
+  // Example: { text: "Our calls doubled in 3 months.", name: "Client Name", biz: "Business, City", stars: 5 }
+  testimonials: []
+};
+/* ======================================================================== */
+
+document.querySelectorAll("[data-bind]").forEach(el=>{
+  const v = CONFIG[el.dataset.bind]; if(v) el.textContent = v;
+});
+document.querySelectorAll("[data-logo]").forEach(i=>i.src = CONFIG.logo);
+document.querySelectorAll("[data-wa]").forEach(a=>{
+  a.href = "https://wa.me/" + CONFIG.whatsapp; a.target = "_blank"; a.rel = "noopener";
+});
+document.querySelectorAll("[data-phone]").forEach(a=>a.href = "tel:" + CONFIG.phone.replace(/\s/g,""));
+document.querySelectorAll("[data-mail]").forEach(a=>a.href = "mailto:" + CONFIG.email);
+document.title = CONFIG.name + " | Get Found. Get Growing.";
+if(CONFIG.testimonials.length){
+  const box=document.getElementById("quotes");
+  CONFIG.testimonials.forEach(t=>{
+    const q=document.createElement("blockquote");q.className="quote";
+    const st=document.createElement("div");st.className="stars";st.textContent="★".repeat(t.stars||5);
+    const p=document.createElement("p");p.textContent=t.text;
+    const f=document.createElement("footer");
+    const b=document.createElement("b");b.textContent=t.name;
+    const sp=document.createElement("span");sp.textContent=t.biz||"";
+    f.append(b,sp);q.append(st,p,f);box.append(q);
+  });
+  document.getElementById("clients").hidden=false;
+}
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+const burger = document.getElementById("burger"), menu = document.getElementById("menu");
+burger.addEventListener("click",()=>{
+  const open = menu.classList.toggle("open");
+  burger.setAttribute("aria-expanded", open);
+});
+menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{menu.classList.remove("open");burger.setAttribute("aria-expanded","false")}));
+
+document.getElementById("form").addEventListener("submit",e=>{
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const text = `Hi ${CONFIG.name}, I'm ${f.get("name")} (${f.get("biz")}).\nI need: ${f.get("service")}.\n${f.get("msg")||""}`;
+  window.open("https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(text), "_blank", "noopener");
+});
+
+/* ---------- animations ---------- */
+(function(){
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const bar=document.getElementById("progress"), hdr=document.querySelector("header");
+  addEventListener("scroll",()=>{
+    const h=document.documentElement;
+    bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
+    hdr.classList.toggle("scrolled",h.scrollTop>10);
+  },{passive:true});
+
+  // reveal on scroll (staggered within each parent)
+  const sel=".sec-head,.svc,.step,.stat,.quote,.about-points>div,.results li,.mini-stats>div,.why li,.cta-band,details,.about>div:first-child,.results>div:first-child,.why>div:first-child,.contact>div,.contact form";
+  const els=[...document.querySelectorAll(sel)];
+  els.forEach(el=>{
+    const sibs=[...el.parentElement.children].filter(c=>els.includes(c));
+    el.style.setProperty("--d",(sibs.indexOf(el)*90)+"ms");
+    el.classList.add("reveal");
+  });
+
+  // number counters
+  function count(el){
+    const m=el.textContent.trim().match(/^(\D*)([\d.]+)(.*)$/); if(!m||reduce) return;
+    const [,pre,num,suf]=m, end=parseFloat(num), dec=(num.split(".")[1]||"").length, pad=num.length;
+    const t0=performance.now(), dur=2200;
+    (function tick(t){
+      const k=Math.min((t-t0)/dur,1), e=k===1?1:1-Math.pow(2,-10*k), v=(end*e).toFixed(dec);
+      el.textContent=pre+(dec?v:String(Math.round(end*e)).padStart(pad,"0"))+suf;
+      if(k<1) requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting) return;
+    e.target.classList.add("in");
+    e.target.querySelectorAll("[data-bind^=stat]").forEach(count);
+    if(e.target.matches("[data-bind^=stat]")) count(e.target);
+    io.unobserve(e.target);
+  }),{threshold:.15});
+  els.forEach(el=>io.observe(el));
+
+  // rank badge counts 7 -> 1 in the hero card
+  const rank=document.querySelector(".res.you .rank");
+  if(rank&&!reduce){let n=7;setTimeout(function step(){rank.textContent=n;if(n>1){n--;setTimeout(step,230)}},520);}
+})();
+</script>
+</body>
+</html>
